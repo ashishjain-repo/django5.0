@@ -64,3 +64,22 @@ View is in this case is the middleman which receives the request from the user a
 URL dispatcher which is the request sent from the user, is always sent to the project not the app, and specifically the urls.py in the project directory, where we defined all the routes when application runs. So we have to remember one thing, whatever route we put in the project urls will be served on the server or browser. So for now we are going to remove the path `sandox/` and leave it empty so whenever we run the server, the root page will be our app, or our app will be served on the root page.
 
 # Passing Data to the Response in our view
+It is very simple to pass dynamic data, what we can do it create a variable and pass it the index function that we have created and then in the httpResponse we can use f-string and pass the data which will displayed by the view. We can also do it with using dictionaries, and list, and can perform other functions on data like random and use it inside the function.
+
+- sandbox/views.py
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+from random import choice
+# Create your views here.
+
+fruits = ['apple','mango','banana']
+
+def index(request):
+    data = "Ash"
+    data2 = {"name":"Ashish Jain","Profession":"Software Developer"}
+    data3 = choice(fruits)
+    return HttpResponse(f"Hey {data}! You are a {data2['Profession']}. Random Fruit: {data3.title()}")
+```
+
+# Static vs Dynamic Websites

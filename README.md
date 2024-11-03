@@ -48,4 +48,19 @@ In views.py, we define a function for the root path "/" that accepts a request p
 Lastly, we add "sandbox" to INSTALLED_APPS in settings.py, which registers the app with the project. Now, running `python manage.py` runserver will start the server and let us view the results.
 
 # Django MVT Architecture
-In MVT architecture we define the urls, write the views to create the logic that can be shown in the template.
+In MVT architecture we define the urls, write the views to create the logic that can be shown in the template. More deep understanding of MVT.
+* Model (Data Structure)
+    1. Define Schema
+    2. ORM, database abstraction layer
+* View (Business Logic)
+    1. Request Handling
+* Template (Presentation Layer)
+    1. Layout Structure
+    2. Seperation of concerns
+
+View is in this case is the middleman which receives the request from the user and based on the logic works with model(database) and templates(static files) and then return the results in the form of template based on the logic.
+
+# Changing Project's Routes and Testing Routes on the browser
+URL dispatcher which is the request sent from the user, is always sent to the project not the app, and specifically the urls.py in the project directory, where we defined all the routes when application runs. So we have to remember one thing, whatever route we put in the project urls will be served on the server or browser. So for now we are going to remove the path `sandox/` and leave it empty so whenever we run the server, the root page will be our app, or our app will be served on the root page.
+
+# Passing Data to the Response in our view

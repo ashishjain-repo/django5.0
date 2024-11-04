@@ -97,4 +97,7 @@ Django allows you to seperate the front and backend into two different component
     4. URL Dispatcher
 
 # Django Settings and URL Dispatcher
+`settings.py` This is the file for project configuration for how Django project operates. `URL Dispatcher` this matches various patterns of URLs to the corresponding views.
+We have incoming request from user, and then we have a Django URL Resolver which looks up and find the correct view that needs to be called and then it returns either HttpRequest or the template. Those patterns are defined in the root's or Project `urls.py` and if the pattern matches it directly returns the view requested or HttpRequest. If the pattern is mathching on the app level it check and matches the pattern and returns the HttpResonse of returns a template.
 
+# Django Views

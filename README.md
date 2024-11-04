@@ -105,3 +105,29 @@ A view create the logic to present the data to the frontend. A view connect to b
 
 # Templates
 Templates allow us to serve dynamic rendering. Django has a template engine that allows us to pass the data or variables dynamically in our templates which makes django's templates for dynamic. Django template engine is called DTL - Django Template Language. To create variables in a template file using Django templating we use `{{}}` and pass the variables inside of those curly brackets. We also have tags in this engine which are represented like this: `{% %}`, and we use these tags for loops and conditional operations. Than we have filters which are small function that modify data before it is rendered by Django, they are represented in the template like this: `{{variable_name | filter_name}}`. The advantages of this template engine are: Code Reuse, Create Templates.
+
+# Creating and rendering HTML Template
+To create a template in Django application we have to create a folder name `templates` in our application, so based on our application we are going to create that in sandbox. Inside of the templates folder we have to create another folder which should be as the name of the app, in this case `sandbox`. Now in that sanbox folder we are going to create a hhtml file named `index.html`. Now we have to go in the urls.py in the app and create a namespace with the name of the application. Now in our view we just have to specify name of the template with the name of the folder it is in, not the templates folder, because django knows where to look for template we just have to tell our view to look into `sandbox/index.html`. Here is the code: -
+
+- views.py
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+
+def index(request):
+    return render(request, "sandbox/index.html")
+```
+
+- urls.py
+```
+from django.urls import path
+from . import views
+
+app_name="sandbox"
+
+urlpatterns = [
+    path("", views.index)
+]
+```

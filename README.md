@@ -83,3 +83,18 @@ def index(request):
 ```
 
 # Static vs Dynamic Websites
+Static websites or pages are the pages that are request by user a HTTP request and what happens is user get the static page, which means user is getting just the fixed static page which will be same everytime that you request that page. In these pages, they need to be manually changed, by the person who is maintainig the page. With the dynamic website that is not the case, now the request is sent by the client, first of all the data itself that is returned is not static itself. This means the content on that page changes depending on the tasks that is being performed by the user. For example when a user logged in the results that are returned are realted to the user, which changes from user to user, because every user does not have the same information.
+
+Django allows you to seperate the front and backend into two different components. So we have frontend which is the client side, or the interface that will be utilized by the user to get the information. Backend is where our application logic resides, which returns the results based on a specific request.
+
+* Front-end (Client-Side) User Interaction
+    1. User Interface (UI)
+    2. Template (HTML, CSS, JavaScript) 
+* Back-end (Server-Side) Application Logic
+    1. Database
+    2. API's
+    3. Views
+    4. URL Dispatcher
+
+# Django Settings and URL Dispatcher
+
